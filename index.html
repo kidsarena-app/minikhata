@@ -7,150 +7,8 @@
 <title>MiniKhata – Smart Ledger App</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 
-<style>
-
-body{
-margin:0;
-font-family:'Poppins',sans-serif;
-background:#f5f7f6;
-color:#222;
-}
-
-/* NAV */
-nav{
-position:sticky;
-top:0;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:14px 24px;
-background:#1B5E20;
-z-index:1000;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-margin-left:18px;
-font-size:14px;
-}
-
-.download-btn{
-background:#FFD54F;
-color:black;
-padding:8px 16px;
-border-radius:20px;
-font-weight:600;
-}
-
-/* SOCIAL ICONS */
-.social-icons img{
-width:22px;
-height:22px;
-margin-left:10px;
-}
-
-/* HERO */
-.hero{
-background:linear-gradient(135deg,#1B5E20,#2E7D32,#66BB6A);
-color:white;
-text-align:center;
-padding:80px 20px 100px;
-}
-
-.hero h1{
-font-size:34px;
-max-width:700px;
-margin:auto;
-}
-
-.hero p{
-margin-top:12px;
-font-size:16px;
-opacity:0.9;
-}
-
-.btn{
-margin-top:25px;
-display:inline-block;
-padding:14px 30px;
-background:#FFD54F;
-color:black;
-border-radius:30px;
-text-decoration:none;
-font-weight:600;
-}
-
-/* MAIN SECTION */
-.section{
-padding:70px 20px;
-max-width:1100px;
-margin:auto;
-}
-
-.center{text-align:center;}
-
-/* VIDEO + SLIDER */
-.showcase{
-display:flex;
-gap:40px;
-justify-content:center;
-align-items:center;
-flex-wrap:wrap;
-margin-top:30px;
-}
-
-video{
-width:260px;
-border-radius:20px;
-box-shadow:0 15px 40px rgba(0,0,0,0.3);
-}
-
-.slider img{
-width:260px;
-border-radius:20px;
-box-shadow:0 15px 40px rgba(0,0,0,0.3);
-}
-
-/* FEATURES */
-.features{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-margin-top:30px;
-}
-
-.card{
-background:white;
-padding:20px;
-border-radius:15px;
-box-shadow:0 8px 25px rgba(0,0,0,0.08);
-}
-
-/* PURPOSE */
-.purpose{
-background:#e8f5e9;
-border-radius:15px;
-padding:30px;
-margin-top:50px;
-}
-
-/* FOOTER */
-footer{
-text-align:center;
-padding:25px;
-background:#1B5E20;
-color:white;
-}
-
-/* MOBILE */
-@media(max-width:600px){
-.hero h1{font-size:24px;}
-video,.slider img{width:200px;}
-}
-
-</style>
 </head>
 
 <body>
@@ -159,7 +17,7 @@ video,.slider img{width:200px;}
 <nav>
 <div><strong>MiniKhata 👑</strong></div>
 
-<div style="display:flex;align-items:center;">
+<div class="nav-right">
 <a href="#home">Home</a>
 <a href="#features">Features</a>
 <a href="#showcase">Demo</a>
@@ -193,7 +51,6 @@ video,.slider img{width:200px;}
 <h1>Save Money. Save Paper. Save Trees. 🌍</h1>
 
 <p>Manage your accounts digitally. No notebooks. No confusion. No loss.</p>
-
 <p>Track credit, debit & business records anytime, anywhere.</p>
 
 <a href="https://play.google.com/store/apps/details?id=com.mahesh.minikhata" class="btn">
@@ -250,9 +107,77 @@ Download Now
 
 </div>
 
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section">
+
+<h2>Choose Your Plan</h2>
+
+<div class="pricing-container">
+
+<div class="pricing-card primary">
+<h3>Primary</h3>
+<p class="price">Free</p>
+
+<ul>
+<li>✔ Classic Ledger</li>
+<li>✔ Professional PDF Reports</li>
+<li>✔ Ad-supported experience</li>
+<li>✖ Yearly & Custom Export</li>
+<li>✖ Cloud Backup</li>
+</ul>
+
+<a href="#" class="btn btn-outline">Start Free</a>
+</div>
+
+<div class="pricing-card silver">
+<div class="badge">Most Popular</div>
+
+<h3>Silver</h3>
+<p class="price">₹99<span>/month</span></p>
+
+<ul>
+<li>✔ Classic Ledger</li>
+<li>✔ Professional PDF Reports</li>
+<li>✔ No Ads</li>
+<li>✔ Yearly & Custom Export</li>
+<li>✖ Cloud Backup</li>
+</ul>
+
+<a href="#" class="btn btn-primary">Upgrade</a>
+</div>
+
+<div class="pricing-card gold">
+<div class="badge gold-badge">2 Months Free</div>
+
+<h3>Gold</h3>
+<p class="price">₹999<span>/year</span></p>
+
+<ul>
+<li>✔ Everything in Silver</li>
+<li>✔ Cloud Backup (Google Drive)</li>
+<li>✔ PIN Reset Safety</li>
+<li>✔ Priority Features</li>
+</ul>
+
+<a href="#" class="btn btn-gold">Go Premium</a>
+</div>
+
+</div>
+
+</section>
+
+<!-- EMOTION -->
+<div class="purpose center small-purpose">
+<p>
+Going digital doesn’t just organize your money.<br>
+It reduces paper usage and helps protect trees 🌱
+</p>
+</div>
+
 <!-- PURPOSE -->
 <div class="purpose">
-
 <h3>Why We Built MiniKhata 🌱</h3>
 
 <p>
@@ -268,21 +193,19 @@ Less paper. Better tracking. Smarter life.
 
 </div>
 
-</section>
-
 <!-- FOOTER -->
 <footer>
 
-<div class="social-icons">
-<a href="https://youtube.com/@minikhata-app" target=" blank">
+<div class="social-icons footer-icons">
+<a href="https://youtube.com/@minikhata-app" target="_blank">
 <img src="assets/icons/youtube.png">
 </a>
 
-<a href="https://www.instagram.com/minikhata.app/" target=" blank">
+<a href="https://www.instagram.com/minikhata.app/" target="_blank">
 <img src="assets/icons/instagram.png">
 </a>
 
-<a href="https://fb.com/MiniKhata" target=" blank">
+<a href="https://fb.com/MiniKhata" target="_blank">
 <img src="assets/icons/facebook.png">
 </a>
 
@@ -291,14 +214,12 @@ Less paper. Better tracking. Smarter life.
 </a>
 </div>
 
-<br>
-© 2026 MiniKhata | minikhata.app@gmail.com
+<p>© 2026 MiniKhata | minikhata.app@gmail.com</p>
 
 </footer>
 
-<!-- SLIDER SCRIPT -->
+<!-- SLIDER -->
 <script>
-
 let images = [
 "assets/screens/1.jpg",
 "assets/screens/2.jpg",
@@ -318,8 +239,7 @@ let i = 0;
 setInterval(() => {
 i = (i + 1) % images.length;
 document.getElementById("slide").src = images[i];
-}, 700);
-
+}, 1200);
 </script>
 
 </body>
