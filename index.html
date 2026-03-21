@@ -3,298 +3,283 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MiniKhata - Save Money. Save Paper. Save Trees.</title>
 
-<title>MiniKhata – Smart Udhar Ledger App</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
 
 <style>
 
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* BODY */
 body{
-margin:0;
-font-family:'Poppins',sans-serif;
-background:linear-gradient(135deg,#1B5E20,#2E7D32,#66BB6A);
-color:white;
+    background:#f5f7f5;
+    color:#222;
 }
 
-/* NAV */
-nav{
-position:sticky;
-top:0;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:12px 20px;
-background:#1B5E20;
-z-index:1000;
-flex-wrap:wrap;
+/* NAVBAR */
+.nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:16px 40px;
+    background:#1f6f2c;
+    color:#fff;
+    position:sticky;
+    top:0;
+    z-index:100;
 }
 
-nav a{
-color:white;
-text-decoration:none;
-margin-left:15px;
-font-size:14px;
+.nav .logo{
+    font-weight:bold;
+    font-size:20px;
 }
 
-/* DOWNLOAD BTN */
+.nav a{
+    color:#fff;
+    margin-left:20px;
+    text-decoration:none;
+    font-size:14px;
+}
+
 .download-btn{
-background:#FFD54F;
-color:black;
-padding:8px 14px;
-border-radius:20px;
-font-weight:600;
-}
-
-/* SOCIAL ICONS FIXED */
-.social-icons img{
-width:22px;
-height:22px;
-margin-left:10px;
-border-radius:6px;
-object-fit:contain;
+    background:#ffd54f;
+    color:#000;
+    padding:8px 16px;
+    border-radius:20px;
+    font-weight:bold;
 }
 
 /* HERO */
 .hero{
-text-align:center;
-padding:80px 20px;
+    text-align:center;
+    padding:80px 20px;
+    background:#2e7d32;
+    color:white;
 }
 
 .hero h1{
-font-size:28px;
-max-width:600px;
-margin:auto;
+    font-size:34px;
+    margin-bottom:10px;
 }
 
 .hero p{
-margin-top:10px;
-font-size:16px;
+    font-size:16px;
+    opacity:0.9;
 }
 
-.btn{
-margin-top:20px;
-display:inline-block;
-padding:12px 28px;
-background:#FFD54F;
-color:black;
-border-radius:30px;
-text-decoration:none;
-font-weight:600;
+.cta{
+    margin-top:20px;
 }
 
-/* APP PREVIEW */
-.preview{
-margin-top:30px;
+.cta button{
+    background:#ffd54f;
+    border:none;
+    padding:14px 28px;
+    border-radius:30px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
 }
 
-.preview img{
-width:220px;
-border-radius:20px;
-box-shadow:0 15px 40px rgba(0,0,0,0.4);
+/* VIDEO */
+.video-section{
+    text-align:center;
+    padding:60px 20px;
 }
 
-/* VIDEO FIX */
+.video-frame{
+    width:280px;
+    margin:auto;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
 video{
-width:260px;
-border-radius:20px;
-box-shadow:0 15px 40px rgba(0,0,0,0.4);
+    width:100%;
 }
 
-/* SECTION */
-.section{
-background:white;
-color:#333;
-padding:60px 20px;
+/* SLIDESHOW */
+.screens{
+    text-align:center;
+    padding:60px 20px;
 }
 
-.center{text-align:center;}
+.slider{
+    width:260px;
+    height:520px;
+    margin:auto;
+    position:relative;
+    overflow:hidden;
+}
+
+.slide{
+    position:absolute;
+    width:100%;
+    height:100%;
+    opacity:0;
+    transition:opacity 0.4s ease-in-out;
+}
+
+.slide.active{
+    opacity:1;
+}
 
 /* FEATURES */
 .features{
-max-width:1000px;
-margin:auto;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
+    padding:60px 20px;
+    text-align:center;
+}
+
+.feature-grid{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
 }
 
 .card{
-background:#f4f9f4;
-padding:20px;
-border-radius:15px;
-box-shadow:0 6px 20px rgba(0,0,0,0.08);
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    width:220px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* SCREEN SLIDER */
-.slider{
-display:flex;
-justify-content:center;
-margin-top:20px;
-}
-
-.slider img{
-width:220px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,0.3);
+/* ENVIRONMENT SECTION */
+.green{
+    background:#e8f5e9;
+    padding:60px 20px;
+    text-align:center;
 }
 
 /* FOOTER */
-footer{
-text-align:center;
-padding:20px;
+.footer{
+    background:#1f6f2c;
+    color:white;
+    text-align:center;
+    padding:30px 20px;
 }
 
-/* MOBILE FIX */
-@media(max-width:600px){
-.hero h1{font-size:22px;}
-video{width:200px;}
-.preview img{width:180px;}
+.social-icons img{
+    width:28px;
+    margin:10px;
 }
 
 </style>
+
 </head>
 
 <body>
 
 <!-- NAV -->
-<nav>
-<div><strong>MiniKhata 👑</strong></div>
-
-<div style="display:flex;align-items:center;flex-wrap:wrap;">
-<a href="#home">Home</a>
-<a href="#features">Features</a>
-<a href="#video">Video</a>
-<a href="#screens">Screenshots</a>
-<a href="privacy.html">Privacy</a>
-<a href="terms.html">Terms</a>
-<a href="contact.html">Contact</a>
-
-<a href="https://play.google.com/store/apps/details?id=com.mahesh.minikhata" class="download-btn">Download</a>
-
-<div class="social-icons">
-<a href="https://youtube.com/@minikhata-app" target="_blank">
-<img src="assets/icons/youtube.png">
-</a>
-
-<a href="https://www.instagram.com/minikhata.app/" target="_blank">
-<img src="assets/icons/instagram.png">
-</a>
-
-<a href="https://fb.com/MiniKhata" target="_blank">
-<img src="assets/icons/facebook.png">
-</a>
-
-<a href="mailto:minikhata.app@gmail.com">
-<img src="assets/icons/gmail.png">
-</a>
+<div class="nav">
+    <div class="logo">MiniKhata 🌱</div>
+    <div>
+        <a href="#">Home</a>
+        <a href="#features">Features</a>
+        <a href="#video">Video</a>
+        <a href="#screens">Screenshots</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="contact.html">Contact</a>
+        <a class="download-btn" href="#">Download</a>
+    </div>
 </div>
-
-</div>
-</nav>
 
 <!-- HERO -->
-<div class="hero" id="home">
-
-<h1>Stop Forgetting Who Owes You Money 💸</h1>
-<p>Track udhar, credit & debit in seconds.</p>
-
-<a href="https://play.google.com/store/apps/details?id=com.mahesh.minikhata" class="btn">
-Download Now
-</a>
-
-<div class="preview">
-<img src="assets/screens/1.jpg">
-</div>
-
+<div class="hero">
+    <h1>Save Money. Save Paper. Save Trees. 🌍</h1>
+    <p>Manage your accounts digitally. No notebooks. No confusion. No loss.</p>
+    <div class="cta">
+        <button>Download Now</button>
+    </div>
 </div>
 
 <!-- VIDEO -->
-<section id="video" class="section center">
-
-<h2>See MiniKhata in Action</h2>
-
-<video controls>
-<source src="assets/video/demo.mp4" type="video/mp4">
-</video>
-
-</section>
-
-<!-- SCREEN SLIDER -->
-<section id="screens" class="section center">
-
-<h2>Screenshots</h2>
-
-<div class="slider">
-<img id="slide" src="assets/screens/1.jpg">
+<div id="video" class="video-section">
+    <h2>See MiniKhata in Action</h2>
+    <div class="video-frame">
+        <video controls>
+            <source src="assets/video/demo.mp4" type="video/mp4">
+        </video>
+    </div>
 </div>
 
-</section>
+<!-- SLIDES -->
+<div id="screens" class="screens">
+    <h2>App Screens</h2>
+    <div class="slider">
+        <img src="assets/screens/1.jpg" class="slide active">
+        <img src="assets/screens/2.jpg" class="slide">
+        <img src="assets/screens/3.jpg" class="slide">
+        <img src="assets/screens/4.jpg" class="slide">
+        <img src="assets/screens/5.jpg" class="slide">
+        <img src="assets/screens/6.jpg" class="slide">
+    </div>
+</div>
 
 <!-- FEATURES -->
-<div class="section center" id="features">
-
-<h2>Why MiniKhata?</h2>
-
-<div class="features">
-<div class="card"><h3>📊 Reports</h3><p>Daily, Monthly & Yearly</p></div>
-<div class="card"><h3>🔒 Secure</h3><p>Stored locally</p></div>
-<div class="card"><h3>⚡ Fast</h3><p>Works on any phone</p></div>
-<div class="card"><h3>💎 Premium</h3><p>Unlimited exports</p></div>
+<div id="features" class="features">
+    <h2>Why MiniKhata?</h2>
+    <div class="feature-grid">
+        <div class="card">💸 Never Lose Money</div>
+        <div class="card">📊 Smart Reports</div>
+        <div class="card">🔒 Private Data</div>
+        <div class="card">📱 Always Accessible</div>
+    </div>
 </div>
 
+<!-- GREEN MESSAGE -->
+<div class="green">
+    <h2>Why We Built MiniKhata 🌱</h2>
+    <p>
+        Millions still use paper to track money.  
+        Paper comes from trees.  
+        Trees are life.  
+        <br><br>
+        MiniKhata helps you go digital —  
+        so you protect your money and the planet.
+    </p>
 </div>
 
 <!-- FOOTER -->
-<footer>
-
-<div class="social-icons">
-<a href="https://youtube.com/@minikhata-app" target="_blank">
-<img src="assets/icons/youtube.png">
-</a>
-
-<a href="https://www.instagram.com/minikhata.app/" target="_blank">
-<img src="assets/icons/instagram.png">
-</a>
-
-<a href="https://fb.com/MiniKhata" target="_blank">
-<img src="assets/icons/facebook.png">
-</a>
-
-<a href="mailto:minikhata.app@gmail.com">
-<img src="assets/icons/gmail.png">
-</a>
+<div class="footer">
+    <p>© 2026 MiniKhata</p>
+    
+    <div class="social-icons">
+        <a href="https://youtube.com/@minikhata-app">
+            <img src="assets/icons/youtube.png">
+        </a>
+        <a href="https://instagram.com/minikhata.app">
+            <img src="assets/icons/instagram.png">
+        </a>
+        <a href="https://facebook.com/MiniKhata">
+            <img src="assets/icons/facebook.png">
+        </a>
+        <a href="mailto:minikhata.app@gmail.com">
+            <img src="assets/icons/gmail.png">
+        </a>
+    </div>
 </div>
 
-<br>
-© 2026 MiniKhata | minikhata.app@gmail.com
-
-</footer>
-
-<!-- AUTO SLIDER SCRIPT -->
+<!-- SLIDER SCRIPT -->
 <script>
-
-let images = [
-"assets/screens/1.jpg",
-"assets/screens/2.jpg",
-"assets/screens/3.jpg",
-"assets/screens/4.jpg",
-"assets/screens/5.jpg",
-"assets/screens/6.jpg",
-"assets/screens/7.jpg",
-"assets/screens/8.jpg",
-"assets/screens/9.jpg",
-"assets/screens/10.jpg",
-"assets/screens/11.jpg"
-];
-
-let i = 0;
+let slides = document.querySelectorAll('.slide');
+let index = 0;
 
 setInterval(() => {
-i = (i + 1) % images.length;
-document.getElementById("slide").src = images[i];
+    slides[index].classList.remove('active');
+    index = (index + 1) % slides.length;
+    slides[index].classList.add('active');
 }, 500);
-
 </script>
 
 </body>
