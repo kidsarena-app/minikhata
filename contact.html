@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <title>MiniKhata - Contact</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
 <style>
 body{
 margin:0;
@@ -11,9 +12,24 @@ font-family:'Poppins',sans-serif;
 background:linear-gradient(135deg,#2E7D32,#81C784);
 color:white;
 }
+
+nav{
+position:sticky;
+top:0;
+display:flex;
+justify-content:space-between;
+padding:15px 40px;
+background:#1B5E20;
+}
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+}
+
 .container{
 max-width:600px;
-margin:100px auto;
+margin:80px auto;
 background:white;
 color:#333;
 padding:40px;
@@ -21,15 +37,60 @@ border-radius:20px;
 box-shadow:0 10px 30px rgba(0,0,0,0.2);
 text-align:center;
 }
+
 h1{color:#1B5E20;}
+
+.social a{
+display:inline-block;
+margin:10px;
+text-decoration:none;
+color:#1B5E20;
+font-weight:600;
+}
 </style>
+
+
+
 </head>
+
 <body>
+
+<nav>
+  <div><strong>MiniKhata 👑</strong></div>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
 
 <div class="container">
 <h1>Contact Us</h1>
+
 <p>If you need help or have questions:</p>
 <p><strong>Email:</strong> minikhata.app@gmail.com</p>
+
+<div class="social-icons">
+
+<a href="https://youtube.com/@minikhata-app" target="_blank">
+<img src="assets/icons/youtube.png">
+</a>
+
+<a href="https://www.instagram.com/minikhata.app/" target="_blank">
+<img src="assets/icons/instagram.png">
+</a>
+
+<a href="https://fb.com/MiniKhata" target="_blank">
+<img src="assets/icons/facebook.png">
+</a>
+
+<a href="mailto:minikhata.app@gmail.com">
+<img src="assets/icons/gmail.png">
+</a>
+
+</div>
+
 <p>We usually respond within 48 hours.</p>
 </div>
 
