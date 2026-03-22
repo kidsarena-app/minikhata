@@ -14,21 +14,59 @@ background:linear-gradient(135deg,#1B5E20,#2E7D32);
 color:white;
 }
 
-/* NAV */
-nav{
-position:sticky;
-top:0;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 40px;
-background:#1B5E20;
-z-index:1000;
+/* NAV STRUCTURE FIX */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 24px;
+  background: #1B5E20;
 }
+
+/* LEFT SIDE */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.nav-left .download-btn {
+  margin-left: 15px;
+}
+
+.brand {
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+/* RIGHT SIDE */
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+/* NAV */
+
+
 nav a{
 color:white;
 text-decoration:none;
 margin-left:20px;
+}
+
+.download-btn{
+background:#FFD54F;
+color:black;
+padding:8px 16px;
+border-radius:20px;
+font-weight:600;
 }
 
 /* ICONS */
@@ -53,43 +91,65 @@ border-radius:20px;
 box-shadow:0 10px 30px rgba(0,0,0,0.2);
 }
 
+/* FOOTER */
+footer{
+text-align:center;
+padding:25px;
+background:#1B5E20;
+color:white;
+}
+
 h1{color:#1B5E20;}
 h2{color:#2E7D32;margin-top:25px;}
 a{color:#1B5E20;}
 p{line-height:1.6;}
 ul{margin-left:20px;}
+
+
+
 </style>
 </head>
 
 <body>
 
 <!-- NAVBAR -->
-<nav>
-<div><strong>MiniKhata 👑</strong></div>
+<nav class="nav">
 
-<div style="display:flex;align-items:center;">
-<a href="index.html">Home</a>
-<a href="privacy.html">Privacy</a>
-<a href="terms.html">Terms</a>
-<a href="contact.html">Contact</a>
+  <!-- LEFT: LOGO + NAME -->
+  <div class="nav-left">
+    <img src="assets/icons/logo.png" class="logo">
+    <span class="brand">MiniKhata</span>
 
-<div class="social-icons">
-  <a href="https://youtube.com/@minikhata-app" target="_blank">
-    <img src="assets/icons/youtube.png">
-  </a>
+<a href="https://play.google.com/store/apps/details?id=com.mahesh.minikhata" class="download-btn">
+      Download
+    </a>
+  </div>
 
-  <a href="https://www.instagram.com/minikhata.app/" target="_blank">
-    <img src="assets/icons/instagram.png">
-  </a>
+  <!-- RIGHT -->
+  <div class="nav-right">
 
-  <a href="https://fb.com/MiniKhata" target="_blank">
-    <img src="assets/icons/facebook.png">
-  </a>
+    <a href="index.html">Home</a>
+    <a href="#features">Features</a>
+    <a href="#showcase">Demo</a>
+    <a href="privacy.html">Privacy</a>
 
-  <a href="mailto:minikhata.app@gmail.com">
-    <img src="assets/icons/gmail.png">
-  </a>
-</div>
+    <div class="social-icons">
+      <a href="https://youtube.com/@minikhata-app" target="_blank">
+        <img src="assets/icons/youtube.png">
+      </a>
+      <a href="https://www.instagram.com/minikhata.app/" target="_blank">
+        <img src="assets/icons/instagram.png">
+      </a>
+      <a href="https://fb.com/MiniKhata" target="_blank">
+        <img src="assets/icons/facebook.png">
+      </a>
+      <a href="mailto:minikhata.app@gmail.com">
+        <img src="assets/icons/gmail.png">
+      </a>
+    </div>
+
+  </div>
+
 </nav>
 
 <!-- CONTENT -->
@@ -143,7 +203,13 @@ https://policies.google.com/privacy</a></p>
 <h2>9. Changes to This Policy</h2>
 <p>We may update this Privacy Policy from time to time.</p>
 
-<h2>10. Contact Us</h2>
+<h2>10. Terms</h2>
+<p>By using MiniKhata, you agree to use the app responsibly.</p>
+<p>Premium features are managed through Google Play.</p>
+<p>You are responsible for your own financial data and usage.</p>
+<p>MiniKhata is provided “as is.” We are not responsible for data or financial loss.</p>
+
+<h2>11. Contact Us</h2>
 <p>If you have any questions:</p>
 
 <p><strong>Email:</strong> minikhata.app@gmail.com</p>
@@ -151,36 +217,38 @@ https://policies.google.com/privacy</a></p>
 <br>
 
 <p style="text-align:center; font-size:14px; color:#777;">
-© 2026 MiniKhata | All Rights Reserved
+We response to valid emails only within 48 hours
 </p>
 
 </div>
 
 <!-- FOOTER -->
-<footer style="text-align:center;padding:20px;">
+<footer>
 
 <div class="social-icons">
-  <a href="https://youtube.com/@minikhata-app" target="_blank">
-    <img src="assets/icons/youtube.png">
-  </a>
+<a href="https://youtube.com/@minikhata-app" target=" blank">
+<img src="assets/icons/youtube.png">
+</a>
 
-  <a href="https://www.instagram.com/minikhata.app/" target="_blank">
-    <img src="assets/icons/instagram.png">
-  </a>
+<a href="https://www.instagram.com/minikhata.app/" target=" blank">
+<img src="assets/icons/instagram.png">
+</a>
 
-  <a href="https://fb.com/MiniKhata" target="_blank">
-    <img src="assets/icons/facebook.png">
-  </a>
+<a href="https://fb.com/MiniKhata" target=" blank">
+<img src="assets/icons/facebook.png">
+</a>
 
-  <a href="mailto:minikhata.app@gmail.com">
-    <img src="assets/icons/gmail.png">
-  </a>
+<a href="mailto:minikhata.app@gmail.com">
+<img src="assets/icons/gmail.png">
+</a>
 </div>
 
 <br>
-© 2026 MiniKhata
+© 2026 MiniKhata | minikhata.app@gmail.com | All Rights Reserved
+
 
 </footer>
+
 
 </body>
 </html>
