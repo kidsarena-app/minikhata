@@ -4,626 +4,234 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>MiniKhata – Smart Ledger App</title>
+<title>MiniKhata – Udhar & Ledger App | Digital Khata for Android</title>
+<meta name="description" content="MiniKhata is an Android digital khata and customer ledger app for credit, debit, daily business records, reports, PDF exports and offline use.">
+<link rel="canonical" href="https://minikhata.in/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MiniKhata">
+<meta property="og:title" content="MiniKhata – Udhar & Ledger App">
+<meta property="og:description" content="Digital khata and customer ledger app for credit, debit, reports, exports and offline record keeping on Android.">
+<meta property="og:url" content="https://minikhata.in/">
+<meta property="og:image" content="https://minikhata.in/assets/icons/logo.png">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://minikhata.in/#website",
+      "url": "https://minikhata.in/",
+      "name": "MiniKhata – Udhar & Ledger App",
+      "description": "Official MiniKhata Android app site for digital khata, customer ledger, credit and debit tracking.",
+      "publisher": {
+        "@id": "https://minikhata.in/#app"
+      }
+    },
+    {
+      "@type": "MobileApplication",
+      "@id": "https://minikhata.in/#app",
+      "name": "MiniKhata – Udhar & Ledger App",
+      "operatingSystem": "Android",
+      "applicationCategory": "FinanceApplication",
+      "url": "https://minikhata.in/",
+      "downloadUrl": "https://play.google.com/store/apps/details?id=com.mahesh.minikhata",
+      "description": "Android ledger app for customer credit, debit, daily records, reports and exports.",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Primary",
+          "price": "0",
+          "priceCurrency": "INR"
+        },
+        {
+          "@type": "Offer",
+          "name": "Silver",
+          "price": "99",
+          "priceCurrency": "INR"
+        },
+        {
+          "@type": "Offer",
+          "name": "Gold",
+          "price": "999",
+          "priceCurrency": "INR"
+        }
+      ],
+      "brand": {
+        "@type": "Brand",
+        "name": "MiniKhata",
+        "url": "https://minikhata.com/"
+      },
+      "creator": {
+        "@type": "Person",
+        "name": "Mahesh Tekawade"
+      },
+      "sameAs": [
+        "https://youtube.com/@minikhata-app",
+        "https://www.instagram.com/minikhata.app/",
+        "https://www.facebook.com/profile.php?id=61575447310297"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://minikhata.in/#faq-schema",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is my data safe?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. All your data is stored locally on your device. We do not store your financial data on servers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does MiniKhata work offline?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can use all core features without internet."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do subscriptions work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Subscriptions are handled securely through Google Play and can be canceled anytime."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will I lose data if I uninstall?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, unless you have taken a backup. We recommend exporting or backing up your data regularly."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
-<style>
-
-html, body {
-  height: 100%;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-}
-
-footer {
-  margin-top: auto;
-}
-
-body{
-margin:0;
-font-family:'Poppins',sans-serif;
-background:#f5f7f6;
-color:#222;
-}
-
-/* NAV STRUCTURE FIX */
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 14px 24px;
-  background: #1B5E20;
-}
-
-/* LEFT SIDE */
-.nav-left {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.logo {
-  width: 50px;
-  height: 50px;
-  object-fit: contain;
-}
-
-.nav-left .download-btn {
-  margin-left: 15px;
-}
-
-.brand {
-  color: white;
-  font-weight: 600;
-  font-size: 18px;
-}
-
-/* RIGHT SIDE */
-.nav-right {
-  display: flex;
-  align-items: center;
-}
-
-/* NAV */
-
-nav a{
-color:white;
-text-decoration:none;
-margin-left:18px;
-font-size:14px;
-}
-
-.download-btn{
-background:#FFD54F;
-color:black;
-padding:8px 16px;
-border-radius:20px;
-font-weight:600;
-}
-
-/* SOCIAL ICONS */
-.social-icons img{
-width:22px;
-height:22px;
-margin-left:10px;
-}
-
-/* HERO */
-.hero{
-background:linear-gradient(135deg,#1B5E20,#2E7D32,#66BB6A);
-color:white;
-text-align:center;
-padding:80px 20px 100px;
-}
-
-.hero h1{
-font-size:34px;
-color:white;
-max-width:700px;
-margin:auto;
-}
-
-.hero p{
-margin-top:12px;
-font-size:16px;
-opacity:0.9;
-}
-
-.btn{
-margin-top:25px;
-display:inline-block;
-padding:14px 30px;
-background:#FFD54F;
-color:black;
-border-radius:30px;
-text-decoration:none;
-font-weight:600;
-}
-
-/* MAIN SECTION */
-.section{
-padding:70px 20px;
-max-width:1100px;
-margin:auto;
-}
-
-.center{text-align:center;}
-
-/* PURPOSE */
-.purpose{
-background:#e8f5e9;
-text-align:center;
-border-radius:15px;
-padding:30px;
-margin-top:50px;
-}
-
-/* VIDEO + SLIDER */
-.showcase{
-display:flex;
-gap:40px;
-justify-content:center;
-align-items:center;
-flex-wrap:wrap;
-margin-top:30px;
-}
-
-video{
-width:260px;
-border-radius:20px;
-box-shadow:0 15px 40px rgba(0,0,0,0.3);
-}
-
-.slider img{
-width:260px;
-border-radius:20px;
-box-shadow:0 15px 40px rgba(0,0,0,0.3);
-}
-
-/* FEATURES */
-.features{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-margin-top:30px;
-}
-
-.card{
-background:white;
-padding:20px;
-border-radius:15px;
-box-shadow:0 8px 25px rgba(0,0,0,0.08);
-}
-
-/* PRICING SECTION */
-.pricing {
-  display: flex;
-  gap: 25px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 40px;
-}
-
-.price-card {
-  background: white;
-  padding: 30px 25px;
-  border-radius: 18px;
-  width: 260px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  text-align: center;
-  position: relative;
-  transition: 0.3s;
-}
-
-.price-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 45px rgba(0,0,0,0.12);
-}
-
-.price-card h3 {
-  margin-bottom: 10px;
-}
-
-.price {
-  font-size: 28px;
-  font-weight: 700;
-  margin: 10px 0;
-}
-
-.price span {
-  font-size: 14px;
-  color: #777;
-}
-
-.tag {
-  font-size: 13px;
-  color: #666;
-  margin-bottom: 15px;
-}
-
-.price-card ul {
-  list-style: none;
-  padding: 0;
-  font-size: 14px;
-  line-height: 28px;
-  text-align: left;
-  margin: 15px 0;
-}
-
-.btn-outline {
-  display: inline-block;
-  padding: 10px 20px;
-  border-radius: 25px;
-  border: 2px solid #1B5E20;
-  color: #1B5E20;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.highlight {
-  border: 2px solid #FFD54F;
-  transform: scale(1.05);
-}
-
-.badge {
-  position: absolute;
-  top: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #FFD54F;
-  color: black;
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: 600;
-}
-
-.save {
-  color: #2E7D32;
-  font-size: 13px;
-  margin-top: -5px;
-}
-
-
-/* FAQ */
-.faq {
-  max-width: 800px;
-  margin: 30px auto;
-  text-align: left;
-}
-
-.faq-item {
-  background: white;
-  padding: 18px 20px;
-  border-radius: 12px;
-  margin-bottom: 15px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-}
-
-.faq-item h3 {
-  margin: 0;
-  font-size: 16px;
-  color: #1B5E20;
-}
-
-.faq-item p {
-  margin-top: 8px;
-  font-size: 14px;
-  color: #555;
-}
-
-/* FOOTER */
-footer{
-text-align:center;
-padding:25px;
-background:#1B5E20;
-color:white;
-}
-
-
-/* MOBILE */
-@media (max-width: 600px){
-
-  .hero h1{
-    font-size:24px;
-    padding:0 10px;
-  }
-
-  .hero p{
-    font-size:14px;
-    padding:0 10px;
-  }
-
-  video,
-  .slider img{
-    width:100%;
-    max-width:260px;
-  }
-
-  .nav-right{
-    display:none; /* clean mobile nav */
-  }
-
-  .nav-left{
-    justify-content:space-between;
-    width:100%;
-  }
-
-
-</style>
+<link rel="stylesheet" href="assets/site.css">
 </head>
 
 <body>
-
-<!-- NAV -->
 <nav class="nav">
-
-  <!-- LEFT: LOGO + NAME -->
   <div class="nav-left">
-    <img src="assets/icons/logo.png" class="logo">
-    <span class="brand">MiniKhata</span>
-
-<a href="https://play.google.com/store/apps/details?id=com.mahesh.minikhata" class="download-btn">
-      Download
-    </a>
+    <a href="#home" style="display:flex;align-items:center;gap:10px"><img src="assets/icons/logo.png" class="logo" alt="MiniKhata logo"><span class="brand">MiniKhata</span></a>
+    <a href="https://play.google.com/store/apps/details?id=com.mahesh.minikhata" class="download-btn" target="_blank" rel="noopener">Download</a>
   </div>
-
-  <!-- RIGHT -->
+  <button class="menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
   <div class="nav-right">
-
     <a href="#home">Home</a>
     <a href="#features">Features</a>
     <a href="#showcase">Demo</a>
+    <a href="#pricing">Pricing</a>
     <a href="privacy.html">Privacy</a>
-
+    <a href="https://minikhata.com/" target="_blank" rel="noopener">All MiniKhata Products</a>
     <div class="social-icons">
-      <a href="https://youtube.com/@minikhata-app" target="_blank">
-        <img src="assets/icons/youtube.png">
-      </a>
-      <a href="https://www.instagram.com/minikhata.app/" target="_blank">
-        <img src="assets/icons/instagram.png">
-      </a>
-      <a href="https://www.facebook.com/profile.php?id=61575447310297" target="_blank">
-        <img src="assets/icons/facebook.png">
-      </a>
-      <a href="mailto:minikhata.app@gmail.com">
-        <img src="assets/icons/gmail.png">
-      </a>
+      <a href="https://youtube.com/@minikhata-app" target="_blank" rel="noopener"><img src="assets/icons/youtube.png" alt="YouTube"></a>
+      <a href="https://www.instagram.com/minikhata.app/" target="_blank" rel="noopener"><img src="assets/icons/instagram.png" alt="Instagram"></a>
+      <a href="https://www.facebook.com/profile.php?id=61575447310297" target="_blank" rel="noopener"><img src="assets/icons/facebook.png" alt="Facebook"></a>
+      <a href="mailto:minikhata.app@gmail.com"><img src="assets/icons/gmail.png" alt="Email"></a>
     </div>
-
   </div>
-
 </nav>
-
 <main>
+<section class="hero" id="home"><div class="container hero-grid">
+  <div>
+    <span class="kicker">MiniKhata • Udhar & Ledger App</span>
+    <h1>Save Money. Save Paper. Save Trees. 🌍</h1>
+    <p>Manage your accounts digitally. No notebooks. No confusion. No loss.</p>
+    <p>Track credit, debit & business records anytime, anywhere.</p>
+    <div class="btn-row">
+      <a href="https://play.google.com/store/apps/details?id=com.mahesh.minikhata" class="btn btn-primary" target="_blank" rel="noopener">Download Now</a>
+      <a href="#showcase" class="btn btn-light">See Demo</a>
+    </div>
+    <div class="trust-row"><span class="pill">Works offline</span><span class="pill">Local data storage</span><span class="pill">Professional PDFs</span><span class="pill">Google Play Billing</span></div>
+  </div>
+  <div class="hero-visual">
+    <div class="phone-stack"><div class="phone"><img src="assets/screens/1.jpg" alt="MiniKhata app screen"></div><div class="phone secondary"><img src="assets/screens/2.jpg" alt="MiniKhata ledger screen"></div></div>
+  </div>
+</div></section>
 
-<!-- HERO -->
-<section class="hero" id="home">
+<section class="section"><div class="container purpose-wrap">
+  <div class="purpose">
+    <h3>Why We Built MiniKhata 🌱</h3>
+    <p>Every year, millions of notebooks are used just to track daily transactions. Paper gets lost, damaged, or forgotten. And every notebook means more trees cut.</p>
+    <p>MiniKhata helps you go digital — to protect your money and the planet. Less paper. Better tracking. Smarter life.</p>
+  </div>
+  <div class="ecosystem-strip">
+    <strong>MiniKhata is growing beyond the ledger app.</strong>
+    <span>Explore CRM Lite, Business Suite and other MiniKhata products.</span>
+    <a href="https://minikhata.com/" target="_blank" rel="noopener">Visit MiniKhata.com →</a>
+  </div>
+</div></section>
 
-<h1>Save Money. Save Paper. Save Trees. 🌍</h1>
+<section class="section" id="showcase"><div class="container">
+  <div class="section-title">
+    <div><h2>See MiniKhata in Action</h2></div>
+  </div>
 
-<p>Manage your accounts digitally. No notebooks. No confusion. No loss.</p>
+  <div class="media-row media-row-two">
+    <div class="media-tile video-tile media-clean">
+      <video controls playsinline preload="metadata">
+        <source src="assets/video/demo.mp4" type="video/mp4">
+      </video>
+    </div>
 
-<p>Track credit, debit & business records anytime, anywhere.</p>
+    <div class="media-tile media-clean">
+      <img id="slide" src="assets/screens/1.jpg" alt="MiniKhata app screenshot">
+    </div>
+  </div>
+</div></section>
 
-<a href="https://play.google.com/store/apps/details?id=com.mahesh.minikhata" class="btn">
-Download Now
-</a>
+<section class="section" id="features"><div class="container">
+  <div class="section-title"><div><h2>Why MiniKhata?</h2><p>Practical features for everyday ledger and business record keeping.</p></div></div>
+  <div class="features">
+    <div class="card"><h3>📊 Smart Reports</h3><p>Understand your money with clear daily, monthly & yearly insights.</p></div>
+    <div class="card"><h3>🔒 Secure & Private</h3><p>Your data stays on your device. No unnecessary sharing.</p></div>
+    <div class="card"><h3>⚡ Works Everywhere</h3><p>Runs smoothly on all phones. No complexity.</p></div>
+    <div class="card"><h3>🌍 Go Paperless</h3><p>Stop using notebooks. Save money and help save trees.</p></div>
+  </div>
+</div></section>
 
-</section>
-
-<!-- PURPOSE -->
-
-<section class="section center">
-
-<div class="purpose">
-
-<h3>Why We Built MiniKhata 🌱</h3>
-
-<p>
-Every year, millions of notebooks are used just to track daily transactions.
-Paper gets lost, damaged, or forgotten.
-And every notebook means more trees cut.
-</p>
-
-<p>
-MiniKhata helps you go digital — to protect your money and the planet.
-Less paper. Better tracking. Smarter life.
-</p>
-
-</div>
-
-</section>
-
-
-<!-- SHOWCASE -->
-
-<section class="section center" id="showcase">
-
-<h2>See MiniKhata in Action</h2>
-
-<div class="showcase">
-
-<video controls>
-<source src="assets/video/demo.mp4" type="video/mp4">
-</video>
-
-<div class="slider">
-<img id="slide" src="assets/screens/1.jpg">
-</div>
-
-</div>
-
-</section>
-
-<!-- FEATURES -->
-<section class="section center" id="features">
-
-<h2>Why MiniKhata?</h2>
-
-<div class="features">
-
-<div class="card">
-<h3>📊 Smart Reports</h3>
-<p>Understand your money with clear daily, monthly & yearly insights.</p>
-</div>
-
-<div class="card">
-<h3>🔒 Secure & Private</h3>
-<p>Your data stays on your device. No unnecessary sharing.</p>
-</div>
-
-<div class="card">
-<h3>⚡ Works Everywhere</h3>
-<p>Runs smoothly on all phones. No complexity.</p>
-</div>
-
-<div class="card">
-<h3>🌍 Go Paperless</h3>
-<p>Stop using notebooks. Save money and help save trees.</p>
-</div>
-
-</div>
-
-<!-- PRICING -->
-
-<section class="section center" id="pricing">
-
-  <h2>Choose Your Plan</h2>
-
+<section class="section" id="pricing"><div class="container">
+  <div class="section-title"><div><h2>Choose Your Plan</h2><p>Start free and upgrade through Google Play when you need more.</p></div></div>
   <div class="pricing">
-
-    <!-- PRIMARY -->
-    <div class="price-card">
-      <h3>Primary</h3>
-      <div class="price">Free</div>
-      <div class="tag">For Personal Use</div>
-
-      <ul>
-        <li>✔ Classic ledger</li>
-        <li>✔ Ads supported exports</li>
-        <li>✔ Professional PDFs</li>
-        <li>✖ Yearly & custom export</li>
-        <li>✖ Cloud backup</li>
-      </ul>
-
-   <a href="https://play.google.com/store/apps/details?id=com.mahesh.minikhata" class="btn-outline">Get Started</a>
-
-</div>
-
-    <!-- SILVER -->
-    <div class="price-card highlight">
-      <div class="badge">Most Popular</div>
-
-      <h3>Silver</h3>
-      <div class="price">₹99 <span>/month</span></div>
-      <div class="tag">For regular users</div>
-
-      <ul>
-        <li>✔ Classic ledger</li>
-        <li>✔ Ad-free experience</li>
-        <li>✔ Professional PDFs</li>
-        <li>✔ Yearly & custom export</li>
-        <li>✖ Cloud backup</li>
-      </ul>
-
-    <a href="https://play.google.com/store/apps/details?id=com.mahesh.minikhata" class="btn-outline">Go Silver</a>
-
-</div>
-
-    <!-- GOLD -->
-    <div class="price-card">
-      <h3>Gold</h3>
-      <div class="price">₹999 <span>/year</span></div>
-      <div class="save">Save 2 months</div>
- 	<div class="tag">For small business</div>
-
-      <ul>
-        <li>✔ Classic ledger</li>
-        <li>✔ Ad-free experience</li>
-        <li>✔ Professional PDFs</li>
-        <li>✔ Yearly & custom export</li>
-        <li>✔ Cloud backup</li>
-      </ul>
-
-      <a href="https://play.google.com/store/apps/details?id=com.mahesh.minikhata" class="btn-outline">Go Gold</a>
-
-    </div>
-
+    <div class="price-card"><h3>Primary</h3><div class="price">Free</div><div class="tag">For Personal Use</div><ul><li>✔ Classic ledger</li><li>✔ Ads supported exports</li><li>✔ Professional PDFs</li><li>✖ Yearly & custom export</li><li>✖ Cloud backup</li></ul><a href="https://play.google.com/store/apps/details?id=com.mahesh.minikhata" class="btn-outline" target="_blank" rel="noopener">Get Started</a></div>
+    <div class="price-card highlight"><div class="badge">Most Popular</div><h3>Silver</h3><div class="price">₹99 <span>/month</span></div><div class="tag">For regular users</div><ul><li>✔ Classic ledger</li><li>✔ Ad-free experience</li><li>✔ Professional PDFs</li><li>✔ Yearly & custom export</li><li>✖ Cloud backup</li></ul><a href="https://play.google.com/store/apps/details?id=com.mahesh.minikhata" class="btn-outline" target="_blank" rel="noopener">Go Silver</a></div>
+    <div class="price-card"><h3>Gold</h3><div class="price">₹999 <span>/year</span></div><div class="save">Save 2 months</div><div class="tag">For small business</div><ul><li>✔ Classic ledger</li><li>✔ Ad-free experience</li><li>✔ Professional PDFs</li><li>✔ Yearly & custom export</li><li>✔ Cloud backup</li></ul><a href="https://play.google.com/store/apps/details?id=com.mahesh.minikhata" class="btn-outline" target="_blank" rel="noopener">Go Gold</a></div>
   </div>
+</div></section>
 
-</section>
-
-
-<!----FAQ SECTION-------->
-
-<section class="section center" id="faq">
-
-  <h2>Frequently Asked Questions</h2>
-
+<section class="section" id="faq"><div class="container">
+  <div class="section-title"><div><h2>Frequently Asked Questions</h2><p>Quick answers about privacy, offline use, subscriptions and backups.</p></div></div>
   <div class="faq">
-
-    <div class="faq-item">
-      <h3>Is my data safe?</h3>
-      <p>Yes. All your data is stored locally on your device. We do not store your financial data on servers.</p>
-    </div>
-
-    <div class="faq-item">
-      <h3>Does MiniKhata work offline?</h3>
-      <p>Yes. You can use all core features without internet.</p>
-    </div>
-
-    <div class="faq-item">
-      <h3>How do subscriptions work?</h3>
-      <p>Subscriptions are handled securely through Google Play and can be canceled anytime.</p>
-    </div>
-
-    <div class="faq-item">
-      <h3>Will I lose data if I uninstall?</h3>
-      <p>Yes, unless you have taken a backup. We recommend exporting or backing up your data regularly.</p>
-    </div>
-
+    <div class="faq-item"><h3>Is my data safe?</h3><p>Yes. All your data is stored locally on your device. We do not store your financial data on servers.</p></div>
+    <div class="faq-item"><h3>Does MiniKhata work offline?</h3><p>Yes. You can use all core features without internet.</p></div>
+    <div class="faq-item"><h3>How do subscriptions work?</h3><p>Subscriptions are handled securely through Google Play and can be canceled anytime.</p></div>
+    <div class="faq-item"><h3>Will I lose data if I uninstall?</h3><p>Yes, unless you have taken a backup. We recommend exporting or backing up your data regularly.</p></div>
   </div>
-
-</section>
-
+</div></section>
 </main>
-
-<!-- FOOTER -->
-<footer>
-
-<div class="social-icons">
-<a href="https://youtube.com/@minikhata-app" target="_blank">
-<img src="assets/icons/youtube.png">
-</a>
-
-<a href="https://www.instagram.com/minikhata.app/" target="_blank">
-<img src="assets/icons/instagram.png">
-</a>
-
-<a href="https://www.facebook.com/61575447310297" target="_blank">
-<img src="assets/icons/facebook.png">
-</a>
-
-<a href="mailto:minikhata.app@gmail.com">
-<img src="assets/icons/gmail.png">
-</a>
-</div>
-
-<br>
-© 2026 MiniKhata | minikhata.app@gmail.com | All Rights Reserved
-
-</footer>
-
-<!-- SLIDER SCRIPT -->
-<script>
-
-let images = [
-"assets/screens/1.jpg",
-"assets/screens/2.jpg",
-"assets/screens/3.jpg",
-"assets/screens/4.jpg",
-"assets/screens/5.jpg",
-"assets/screens/6.jpg",
-"assets/screens/7.jpg",
-"assets/screens/8.jpg",
-"assets/screens/9.jpg",
-"assets/screens/10.jpg",
-"assets/screens/11.jpg"
-];
-
-let i = 0;
-
-setInterval(() => {
-i = (i + 1) % images.length;
-document.getElementById("slide").src = images[i];
-}, 700);
-
-</script>
-
-</body>
-</html>
+<footer class="footer"><div class="container footer-compact">
+  <div class="footer-cell">
+    <div>© 2026 MiniKhata | minikhata.app@gmail.com</div>
+  </div>
+  <div class="footer-cell footer-right">
+    <div>All Rights Reserved</div>
+  </div>
+  <div class="footer-cell footer-founder">
+    <div>Founded by <strong>Mahesh Tekawade</strong></div>
+  </div>
+  <div class="footer-cell footer-right footer-founder">
+    <div>Currently developed and operated through <a href="https://maheshservices.github.io/" target="_blank" rel="noopener"><strong>Mahesh Services</strong></a>, Pune, India.</div>
+  </div>
+</div></footer>
+<script src="assets/site.js"></script>
+</body></html>
